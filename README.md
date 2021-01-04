@@ -1,3 +1,3 @@
 # CircuitPython
 
-Testing from Beagle Term
+My CircuitPython assignments

@@ -1,12 +1,14 @@
 from time import sleep
 import board
 from rgb import RGB
+import neopixel
 
 pins1 = [board.D1, board.D2, board.D3]
 pins2 = [board.D4, board.D5, board.D7]
 delay = 1
 
-RGBs = [RGB(pins1), RGB(pins2)]
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+RGBs = [RGB(pins1, dot), RGB(pins2, dot)]
 
 print("go")
 

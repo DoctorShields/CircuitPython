@@ -4,15 +4,20 @@ from time import sleep
 class RGB:
 
     full = 2**16-1
+    dotB = 50
 
-    def __init__(self, pins):
+    def __init__(self, pins, dot):
         self.pwmList = []
         for pin in pins:
             self.pwmList.append(PWMOut(pin, duty_cycle=0,frequency=5000))
+            self.dot = dot
 
     def setVals(self, arr):
+        dotArr = [0,0,0]
         for i, pwm in enumerate(self.pwmList):
             pwm.duty_cycle = int(self.full-arr[i]*self.full)
+            dotArr[i] = arr[i]*self.dotB
+        self.dot.fill((dotArr[0],dotArr[1],dotArr[2]))
 
     def red(self):
         arr = (1, 0, 0)

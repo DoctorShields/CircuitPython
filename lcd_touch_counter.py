@@ -4,9 +4,10 @@ import touchio
 #import neopixel
 import board
 import time
-#import servo
+import servo
 #import busio
 
+print("hi")
 from lcd.lcd import LCD
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
 lcd = LCD(I2CPCF8574Interface(0x3f), num_rows=2, num_cols=16)
